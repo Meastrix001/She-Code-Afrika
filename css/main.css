@@ -33,7 +33,7 @@ body{
 .spacing{
 margin: 4rem auto;
 }
-h2 span{
+h2 span, h1 span{
   color: var(--main-pink);
 }
 h1, h2,h3,h4,h5 span, button{
@@ -91,6 +91,7 @@ nav ul li.active a{
   color: var(--main-pink);
 }
 nav ul li a {
+  text-transform: uppercase;
   font-size: 1.5rem;
   color: black;
   text-decoration: none;
@@ -382,7 +383,7 @@ opacity: 0;
   margin: auto;
 }
 .about--hero{
-  padding: 1rem;
+  padding: 5rem 1rem;
   margin: auto;
   background-color: white;
   max-width: 1200px;
@@ -399,7 +400,7 @@ cursor: pointer;
 }
 
 .about--spacing{
-  height: 30rem;
+  height: 100vh;
   width: 100%;
   background-color: unset;
 }
@@ -461,11 +462,13 @@ transition: 0.125s ease all;
   margin: 1rem;
   margin: auto; 
   min-height: 100vh;
-  background: linear-gradient(#a545dd, #33b73c);
 }
 .supportPage--hero{
   background-color: white;
-
+}
+.supportPage--hero h1{
+  margin: 0;
+  padding: 2rem 0;
 }
 .supportPage--hero div{
   position: relative;
@@ -475,19 +478,31 @@ transition: 0.125s ease all;
   margin: 1rem;
 }
 .supportPage--hero img{
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 7rem;
+  max-height: 7rem;
+  height: 100%;
+  width: 100%;
   -moz-animation: triangle 25s linear infinite;
   -webkit-animation: triangle 25s linear infinite;
   animation: triangle 25s linear infinite;
+}
+.supportPage--hero figure {
+  max-width: 8rem;
+  max-height: 8rem;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 32%;
+  left: 25%;
+  transform: translateY(-50%) translateX(-50%);
 }
 .supportPage--hero div section {
   background-color: white;
   border-radius: 50%;
   padding: 1rem;
-  left: 40%;
+  left: 50%;
   position: absolute;
-  top: 45%;
+  top: 50%;
   transform: translateY(-50%) translateX(-50%);
   display: flex;
   flex-direction: column;
@@ -508,8 +523,9 @@ transition: 0.125s ease all;
 .supportPage--qoute {
   background-color: white;
   max-width: 100%;
-  padding: 8rem ;
+  padding: 4rem;
   border-left: 5px solid var(--main-pink);
+  transition: 0.125s ease all;
 }
 .supportPage--qoute p{
   color: gray;
@@ -522,16 +538,62 @@ transition: 0.125s ease all;
 }
 
 .supportPage--gradient{
+  height: 100vh;
+      width: 100%;
+      position: fixed;
+      margin: auto;
+      max-width: 1200px;
+      left: -1;
+      z-index: -1;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgb(104,96,244);
+      background: linear-gradient(166deg, rgba(104,96,244,1) 0%, rgba(181,104,240,1) 35%, rgba(222,86,248,1) 69%, rgba(255,0,     185,1) 100%);
+}
+.supportPage--gradient--hole{
+  width: 100%;
+  height: 6rem;
+  border-top: 10rem solid white;
+    transition: 0.125s ease all;
+    border-bottom: 10rem solid white;
+}
+.supportPage--gradient--color{
+  width: 100%;
   height: 2rem;
-  width: 100%;background-color: unset;
+  background-color: unset;
+}
+.supportPage--video{
+  background-color: white;
+  padding-bottom: 6rem;
+}
+.supportPage--video div{
+  padding-top: 56.25%;
+  position: relative;
+}
+.supportPage--video div iframe{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 0;
+  left: 0;
+  top: 0;
 }
 
 @media (min-width: 50rem) {
   .supportPage--hero p {
     font-size: 1.2rem;
   }
+  .supportPage--qoute {
+    padding: 8rem;
+
+    transition: 0.125s ease all;
+  }
   .supportPage--qoute p{
     font-size: 4rem;
+  }
+  .supportPage--gradient--hole{
+    transition: 0.125s ease all;
+    height: 2rem;
   }
 }
 /* footer */
@@ -542,7 +604,7 @@ height: 30rem;
 background-color: black;
 }
 footer div{
-  width: 30rem;
+  width: 20rem;
   background-image: url(../images/inverted-logo.svg);
   height: 100%;
   background-repeat: no-repeat;
@@ -554,17 +616,17 @@ footer div{
 }
 footer div section {
   width: 8.5rem;
-      white-space: nowrap;
-      transform: rotate( 
+  white-space: nowrap;
+  transform: rotate( 
   51deg)translateY(-50%) translateX(-50%);
-      position: absolute;
-      top: 44.1%;
-      display: inline-block;
-      overflow: hidden;
-      right: 35.2%;
-      background: #b70569;
-      height: 1.8rem;
-      border-radius: 7.2px;
+  position: absolute;
+  top: 44%;
+  display: inline-block;
+  overflow: hidden;
+  right: 27.7%;
+  background: #b70569;
+  height: 1.8rem;
+  border-radius: 7.2px;
   }
 footer div section p {
 }
@@ -573,8 +635,9 @@ footer div section p {
   background-image: none;
   width: fit-content;
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   margin-top: 5px;
+  text-transform: uppercase;
   font-family: 'Open Sans', 'sans-serif';
   font-weight: 200;
   margin: 0 auto;
@@ -584,14 +647,16 @@ footer div section p {
   -moz-transform: rotate(-45deg) rotate(-45deg);
   -webkit-transform: rotate(-45deg) rotate(-45deg);
   transform: rotate(-45deg) rotate(-45deg);
-  -moz-animation: scrolling-text 5s linear infinite;
-  -webkit-animation: scrolling-text 5s linear infinite;
-  animation: scrolling-text 5s linear infinite;
+  -moz-animation: scrolling-text 7s linear infinite;
+  -webkit-animation: scrolling-text 7s linear infinite;
+  animation: scrolling-text 7s linear infinite;
 }
 
 @-webkit-keyframes scrolling-text {
-  from { -webkit-transform: translateX(100%); }
-  to { -webkit-transform: translateX(-100%); }
+  0% {  -webkit-transform: translateX(100%);
+          visibility: hidden; }
+  45% {   visibility: visible;  }
+  100% { -webkit-transform: translateX(-100%); }
 }
 @-moz-keyframes scrolling-text {
   from { -moz-transform: translateX(100%); }
@@ -609,6 +674,7 @@ footer div section p {
     transform: translateX(-100%);
   }
 }
+
 @-webkit-keyframes triangle {
   0% { transform: rotate(0deg); }
   45% { transform: rotate(340deg); }
